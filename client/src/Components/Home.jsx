@@ -1,27 +1,31 @@
-import axios from 'axios'
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { logoutUser } from '../services/api';// Adjust path as needed
 
 const Home = () => {
-  const navigate = useNavigate()
-  axios.defaults.withCredentials = true;
-  const handleLogout = () =>{
-    axios.get('http://localhost:3000/auth/logout')
-    .then(res => {
-      if(res.data.status){
-        navigate('/login')
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const res = await logoutUser();
+      if (res.status) {
+        navigate('/login');
+      } else {
+        console.log("Logout failed on server");
       }
-    }).catch(err =>{
-      console.log(err)
-    })
-  }
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
+  };
+
   return (
-    <div>Home
+    <div>
+      Home
       <button><Link to="/dashboard">Dashboard</Link></button>
       <br /><br />
       <button onClick={handleLogout}>Logout</button>
     </div>
-  )
-}
+  );
+};
 
 export default Home
