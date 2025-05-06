@@ -11,7 +11,7 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  Axios.defaults.withCredentials = true;
+  api.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
     e.preventDefault()
