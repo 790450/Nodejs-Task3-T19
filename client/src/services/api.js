@@ -21,4 +21,6 @@ export const logoutUser = async () => {
   }
 };
 
+export default api;
+
 // You can also add loginUser, registerUser, etc. here later
