@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../App.css'
-import Axios from 'axios'
+import api from '../services/api';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-      Axios.post('http://localhost:3000/auth/forgot-password', {  
+      api.post('/auth/forgot-password', { 
         email, 
       }).then(response =>{
         if(response.data.status){
