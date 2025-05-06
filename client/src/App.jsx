@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Signup from './Components/Signup';
 import Login from './Components/Login';
-import Home from './Components/Home';
+import Home from "./Components/Home";
 import ForgotPassword from './Components/ForgotPassword';
 import ResetPassword from './Components/ResetPassword';
 import Dashboard from './Components/Dashboard';
