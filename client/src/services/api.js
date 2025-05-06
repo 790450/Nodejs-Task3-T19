@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 // Use environment variable or fallback to localhost
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_BASE_URL = "https://nodejs-task3-t19.onrender.com"
 
 // Create an Axios instance with default settings
 const api = axios.create({
