@@ -80,7 +80,7 @@ router.post('/forgot-password', async (req, res) => {
   }
 })
 
-router.post('http://auth/reset-password/:token', async (req, res) => {
+router.post('/auth/reset-password/:token', async (req, res) => {
   const { token } = req.params;
   const { password } = req.body
   try {
