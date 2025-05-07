@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../App.css'
-import Axios from 'axios'
+import api from '../services/api';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const ResetPassword = () => {
@@ -11,7 +11,7 @@ const ResetPassword = () => {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-      Axios.post('http://localhost:3000/auth/reset-password/'+token, {  
+      api.post(`/auth/reset-password/${token}`, {
         password, 
       }).then(response =>{
         if(response.data.status){
