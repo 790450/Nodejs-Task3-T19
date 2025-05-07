@@ -63,7 +63,7 @@ router.post('/forgot-password', async (req, res) => {
       from: 'musrafvj@gmail.com',
       to: email,
       subject: 'Reset Password',
-      text: `http://localhost:5173/resetPassword/${token}`
+      text: `/auth/reset-password/${token}`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
